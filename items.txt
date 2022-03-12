@@ -1,0 +1,7 @@
+Milo,20
+Teh,3.50
+Batu,10
+Batu,10
+Batu,10
+Batu,10
+Batu,10
