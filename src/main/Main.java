@@ -51,12 +51,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		Welcomeframe welcomeframe;
-		Cashierframe cashier;
+		Cashier cashier;
 
 		try {
 			welcomeframe = new Welcomeframe();
 			welcomeframe.getContentPane().setForeground(new Color(0, 0, 0));
-			cashier = new Cashierframe();
+			cashier = new Cashier();
 
 			welcomeframe.setVisible(true);
 			Thread.sleep(2000);

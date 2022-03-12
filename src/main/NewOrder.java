@@ -74,7 +74,7 @@ public class NewOrder extends JFrame {
 			@Override
 			public void windowClosed(WindowEvent e) {
 				itemselector.dispose();
-				Cashierframe.getbuttoncreate().setEnabled(true);
+				Cashier.getbuttoncreate().setEnabled(true);
 			}
 
 			@Override
@@ -95,7 +95,7 @@ public class NewOrder extends JFrame {
 					listpricecust = 0;
 					finalprice = 0;
 					regularcustomer = false;
-					Cashierframe.setorderframenull();
+					Cashier.setorderframenull();
 					dispose();
 				}
 			}

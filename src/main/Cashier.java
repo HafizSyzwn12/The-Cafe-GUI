@@ -32,7 +32,7 @@ import java.util.Date;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class Cashierframe extends JFrame {
+public class Cashier extends JFrame {
 
 	SimpleDateFormat newdateformat = new SimpleDateFormat("dd-MM-yyyy");
 	SimpleDateFormat newtimeformat = new SimpleDateFormat("hh:mm a");
@@ -91,7 +91,7 @@ public class Cashierframe extends JFrame {
 		}
 	}
 
-	public Cashierframe() throws IOException {
+	public Cashier() throws IOException {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -157,7 +157,7 @@ public class Cashierframe extends JFrame {
 				}
 			}
 		});
-		mntmNewMenuItem.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/receipt.png")));
+		mntmNewMenuItem.setIcon(new ImageIcon(Cashier.class.getResource("/main/logo/receipt.png")));
 		mnNewMenu.add(mntmNewMenuItem);
 
 		JMenu mnNewMenu_1 = new JMenu("Help");
@@ -178,7 +178,7 @@ public class Cashierframe extends JFrame {
 				}
 			}
 		});
-		mntmNewMenuItem_1.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/manual.png")));
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Cashier.class.getResource("/main/logo/manual.png")));
 		mnNewMenu_1.add(mntmNewMenuItem_1);
 
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("About");
@@ -190,7 +190,7 @@ public class Cashierframe extends JFrame {
 						"About App", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
-		mntmNewMenuItem_2.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/about.png")));
+		mntmNewMenuItem_2.setIcon(new ImageIcon(Cashier.class.getResource("/main/logo/about.png")));
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.WHITE);
@@ -202,12 +202,12 @@ public class Cashierframe extends JFrame {
 		scrollPane.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 
 		JLabel lblNewLabel = new JLabel("Orders");
-		lblNewLabel.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/ordericon.png")));
+		lblNewLabel.setIcon(new ImageIcon(Cashier.class.getResource("/main/logo/ordericon.png")));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 24));
 
 		btnNewButton = new JButton("New Order");
-		btnNewButton.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/add.png")));
+		btnNewButton.setIcon(new ImageIcon(Cashier.class.getResource("/main/logo/add.png")));
 		btnNewButton.setFocusable(false);
 		btnNewButton.setBackground(new Color(160, 82, 45));
 		btnNewButton.addMouseListener(new MouseAdapter() {

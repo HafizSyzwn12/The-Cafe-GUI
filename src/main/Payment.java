@@ -178,8 +178,8 @@ public class Payment extends JFrame {
 					Main.getpayment().add(new Paymentclass(orderid, paymenttype, payment, custpayvalue));
 					Receipt receiptframe = new Receipt(orderid);
 					receiptframe.setVisible(true);
-					Cashierframe.getorderframe().dispose();
-					Cashierframe.showdata();
+					Cashier.getorderframe().dispose();
+					Cashier.showdata();
 					NewOrder.listpricecust = 0;
 					NewOrder.finalprice = 0;
 					NewOrder.regularcustomer = false;
