@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.awt.Color;
 
 public class Main {
-	static ArrayList<Customerclass> customers = new ArrayList<Customerclass>();
-	static ArrayList<Itemsclass> listofitems = new ArrayList<Itemsclass>();
-	static ArrayList<Ordersclass> listoforders = new ArrayList<Ordersclass>();
-	static ArrayList<Paymentclass> listofpayment = new ArrayList<Paymentclass>();
+	static ArrayList<Customer> customers = new ArrayList<Customer>();
+	static ArrayList<Classitems> listofitems = new ArrayList<Classitems>();
+	static ArrayList<Order> listoforders = new ArrayList<Order>();
+	static ArrayList<Payment> listofpayment = new ArrayList<Payment>();
 	
 	//CONFIGURATION
 	static private Double memberdiscount = 0.05;
@@ -29,32 +29,32 @@ public class Main {
 			return memberdiscount;
     }
 
-	public static ArrayList<Customerclass> getcustomer() 
+	public static ArrayList<Customer> getcustomer() 
 	{
 		return customers;
 	}
 
-	public static ArrayList<Itemsclass> getitems() 
+	public static ArrayList<Classitems> getitems() 
 	{
 		return listofitems;
 	}
 	
-	public static ArrayList<Ordersclass> getorders() 
+	public static ArrayList<Order> getorders() 
 	{
 		return listoforders;
 	}
 	
-	public static ArrayList<Paymentclass> getpayment()
+	public static ArrayList<Payment> getpayment()
 	{
 		return listofpayment;
 	}
 
 	public static void main(String[] args) {
-		Welcomeframe welcomeframe;
+		WelcomePage welcomeframe;
 		Cashier cashier;
 
 		try {
-			welcomeframe = new Welcomeframe();
+			welcomeframe = new WelcomePage();
 			welcomeframe.getContentPane().setForeground(new Color(0, 0, 0));
 			cashier = new Cashier();
 

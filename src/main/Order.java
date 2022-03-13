@@ -1,18 +1,18 @@
 package main;
 
-public class Ordersclass {
+public class Order {
 	//LINKED BY ORDER ID
     protected String orderid;
     private String date;
     private String time;
     
-    public Ordersclass() {
+    public Order() {
     	orderid = null;
     	date = null;
     	time = null;
     }
     
-    public Ordersclass(String orderid, String date, String time) {
+    public Order(String orderid, String date, String time) {
     	this.orderid = orderid;
     	this.date = date;
     	this.time = time;

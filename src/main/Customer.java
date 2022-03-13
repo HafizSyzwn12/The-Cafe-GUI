@@ -1,6 +1,6 @@
 package main;
 
-public class Customerclass extends Ordersclass{
+public class Customer extends Order{
 	//CUSTOMER DATA
     private String name;
     private String phoneno;
@@ -8,7 +8,7 @@ public class Customerclass extends Ordersclass{
     private String gender;
     private boolean regularcustomer; //FOR GET DISCOUNT IF TRUE
     
-    public Customerclass(){
+    public Customer(){
         orderid = null;
         name = null;
         phoneno = null;
@@ -17,7 +17,7 @@ public class Customerclass extends Ordersclass{
         regularcustomer = false;
     }
     
-    public Customerclass(String orderid, String name, String phoneno, String address, String gender, boolean regularcustomer){
+    public Customer(String orderid, String name, String phoneno, String address, String gender, boolean regularcustomer){
         this.orderid = orderid;
         this.name = name;
         this.phoneno = phoneno;

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JProgressBar;
 
-public class Welcomeframe extends JFrame {
+public class WelcomePage extends JFrame {
 	/**
 	 * 
 	 */
@@ -22,7 +22,7 @@ public class Welcomeframe extends JFrame {
 	 */
 	JProgressBar progressBar = new JProgressBar();
 	JLabel lblNewLabel_3 = new JLabel("Welcome! Starting up...");
-	public Welcomeframe() {
+	public WelcomePage() {
 		setUndecorated(true);
 		setResizable(false);
 		setTitle(Main.getappname());

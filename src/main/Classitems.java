@@ -1,13 +1,13 @@
 package main;
 
-public class Itemsclass extends Ordersclass{
+public class Classitems extends Order{
 	//ITEMS DATA
 	private int itemnumber;
     private String itemname;
     private int quantity;
     private double totalitems;
     
-    public Itemsclass(){
+    public Classitems(){
         orderid = null;
         itemnumber = 0;
         itemname = null;
@@ -15,7 +15,7 @@ public class Itemsclass extends Ordersclass{
         totalitems = 0;
     }
     
-    public Itemsclass(String orderid, int itemnumber, String itemname, int quantity, double totalitems){
+    public Classitems(String orderid, int itemnumber, String itemname, int quantity, double totalitems){
         this.orderid = orderid;
         this.itemname = itemname;
         this.quantity = quantity;

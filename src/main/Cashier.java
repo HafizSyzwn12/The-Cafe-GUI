@@ -41,7 +41,7 @@ public class Cashier extends JFrame {
 	private JTable orderlist;
 	static DefaultTableModel listordermodel;
 	private static JButton btnNewButton;
-	static NewOrder orderframe = null;
+	static Neworder orderframe = null;
 
 	static DecimalFormat priceformatter = new DecimalFormat("#0.00");
 	static private String orderidmain = null;
@@ -71,7 +71,7 @@ public class Cashier extends JFrame {
 		}
 	}
 	
-	static public NewOrder getorderframe() {
+	static public Neworder getorderframe() {
 		return orderframe;
 	}
 	
@@ -143,7 +143,7 @@ public class Cashier extends JFrame {
 					if (!orderid.isEmpty()) {
 						boolean duplicateorderid = containsOrderId(orderid);
 						if (duplicateorderid) {
-							Receipt receiptframe = new Receipt(orderid);
+							TheReceipt receiptframe = new TheReceipt(orderid);
 							receiptframe.setVisible(true);
 						} else {
 							JOptionPane.showMessageDialog(null,
@@ -218,7 +218,7 @@ public class Cashier extends JFrame {
 							"Enter new order ID", JOptionPane.INFORMATION_MESSAGE);
 					orderidmain = orderid;
 					try {
-						orderframe = new NewOrder(orderidmain);
+						orderframe = new Neworder(orderidmain);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -235,7 +235,7 @@ public class Cashier extends JFrame {
 								Date date = new Date();
 								
 								Main.getorders().add(
-										new Ordersclass(orderid, newdateformat.format(date), newtimeformat.format(date)));
+										new Order(orderid, newdateformat.format(date), newtimeformat.format(date)));
 								orderframe.setVisible(true);
 								btnNewButton.setEnabled(false);
 							}

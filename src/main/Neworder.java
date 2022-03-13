@@ -30,7 +30,7 @@ import javax.swing.JRadioButton;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 
-public class NewOrder extends JFrame {
+public class Neworder extends JFrame {
 
 	static DecimalFormat priceformatter = new DecimalFormat("#0.00");
 	DecimalFormat discountnumber = new DecimalFormat("#0");
@@ -42,7 +42,7 @@ public class NewOrder extends JFrame {
 	static double finalprice = 0;
 	static private JLabel titletotalprice;
 	static private JLabel totalpricedisplay;
-	static Payment paymentframe = null;
+	static PaymentPage paymentframe = null;
 	
 	static boolean regularcustomer = false;
 
@@ -68,8 +68,8 @@ public class NewOrder extends JFrame {
 		paymentframe = null;
 	}
 
-	public NewOrder(String orderid) throws IOException {
-		ItemSelector itemselector = new ItemSelector(orderid);
+	public Neworder(String orderid) throws IOException {
+		Itemselector itemselector = new Itemselector(orderid);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosed(WindowEvent e) {
@@ -118,7 +118,7 @@ public class NewOrder extends JFrame {
 			java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		setTitle(Main.getappname());
-		setIconImage(Toolkit.getDefaultToolkit().getImage(NewOrder.class.getResource("/main/logo/logo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Neworder.class.getResource("/main/logo/logo.png")));
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 1023, 587);
 		contentPane = new JPanel();
@@ -320,10 +320,10 @@ public class NewOrder extends JFrame {
 					boolean duplicateorderid = containsOrderId(orderid);
 					if (duplicateorderid) {
 					} else {						
-						Main.getcustomer().add(new Customerclass(orderid, customername, phoneno, address, gender, regularcustomer));
+						Main.getcustomer().add(new Customer(orderid, customername, phoneno, address, gender, regularcustomer));
 					}
 					if(paymentframe == null) {						
-						paymentframe = new Payment(orderid, finalprice);
+						paymentframe = new PaymentPage(orderid, finalprice);
 						paymentframe.setVisible(true);
 					}else {
 						paymentframe.setVisible(true);
@@ -431,7 +431,7 @@ public class NewOrder extends JFrame {
 		);
 
 		lblNewLabel_2 = new JLabel("New order for ID: " + orderid);
-		lblNewLabel_2.setIcon(new ImageIcon(NewOrder.class.getResource("/main/logo/contract.png")));
+		lblNewLabel_2.setIcon(new ImageIcon(Neworder.class.getResource("/main/logo/contract.png")));
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		GroupLayout gl_panel = new GroupLayout(panel);

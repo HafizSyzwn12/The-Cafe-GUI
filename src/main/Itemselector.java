@@ -32,7 +32,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JTextField;
 
-public class ItemSelector extends JFrame {
+public class Itemselector extends JFrame {
 	
 	DecimalFormat priceformatter = new DecimalFormat("#0.00");
 
@@ -52,10 +52,10 @@ public class ItemSelector extends JFrame {
 	 * Create the frame.
 	 */
 
-	public ItemSelector(final String orderid) throws IOException {
+	public Itemselector(final String orderid) throws IOException {
 		this.orderid = orderid;
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage(ItemSelector.class.getResource("/main/logo/logo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Itemselector.class.getResource("/main/logo/logo.png")));
 		setTitle(Main.getappname());
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 783, 539);
@@ -132,7 +132,7 @@ public class ItemSelector extends JFrame {
 						//CALCULATE PRICE FOR SELECTED ITEM AND QUANTITY
 						quantityno = (Integer) quantity.getValue();
 						totalitemsprice = priceperitemArray[selecteditem - 1] * quantityno;
-						Main.getitems().add(new Itemsclass(orderid, lastitemnumber, String.valueOf(itemlistnameArray[selecteditem - 1]), (Integer)quantity.getValue(), totalitemsprice));
+						Main.getitems().add(new Classitems(orderid, lastitemnumber, String.valueOf(itemlistnameArray[selecteditem - 1]), (Integer)quantity.getValue(), totalitemsprice));
 						quantity.setValue(1);
 						showdata();
 					}else {
@@ -175,7 +175,7 @@ public class ItemSelector extends JFrame {
 				int deletenumber;
 				try {
 					deletenumber = Integer.parseInt(deletenumberfield.getText());
-					Predicate<Itemsclass> condition2 = p->p.getitemnumber()==deletenumber && p.orderid == orderid;
+					Predicate<Classitems> condition2 = p->p.getitemnumber()==deletenumber && p.orderid == orderid;
 					Main.getitems().removeIf(condition2);
 					calctotalprice();
 					showdata();
@@ -281,7 +281,7 @@ public class ItemSelector extends JFrame {
 
 		JLabel lblNewLabel_2 = new JLabel("Items for order ID: " + orderid);
 
-		lblNewLabel_2.setIcon(new ImageIcon(ItemSelector.class.getResource("/main/logo/contract.png")));
+		lblNewLabel_2.setIcon(new ImageIcon(Itemselector.class.getResource("/main/logo/contract.png")));
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		GroupLayout gl_panel = new GroupLayout(panel);
@@ -305,7 +305,7 @@ public class ItemSelector extends JFrame {
 			}
 		}
 		totalpricedisplay.setText("Total Price: RM " + priceformatter.format(listpricecust));
-		NewOrder.calctotalprice(listpricecust);
+		Neworder.calctotalprice(listpricecust);
 	}
 	
 	private void showdata() {

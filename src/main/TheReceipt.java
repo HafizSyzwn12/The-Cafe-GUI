@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Receipt extends JFrame {
+public class TheReceipt extends JFrame {
 	
 	DecimalFormat priceformatter = new DecimalFormat("#0.00");
 
@@ -28,14 +28,14 @@ public class Receipt extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Receipt(String orderid) {
+	public TheReceipt(String orderid) {
 		//@SuppressWarnings("unlikely-arg-type")
-		List<Customerclass> customerdata = Main.getcustomer().stream().filter(custdata -> custdata.getorderid().equals(orderid)).collect(Collectors.toList());
-		List<Ordersclass> orderdata = Main.getorders().stream().filter(orderdat -> orderdat.getorderid().equals(orderid)).collect(Collectors.toList());
-		List<Paymentclass> paymentdata = Main.getpayment().stream().filter(paymentdat -> paymentdat.getorderid().equals(orderid)).collect(Collectors.toList());
-		List<Itemsclass> itemsdata = Main.getitems().stream().filter(itemdat -> itemdat.getorderid().equals(orderid)).collect(Collectors.toList());
+		List<Customer> customerdata = Main.getcustomer().stream().filter(custdata -> custdata.getorderid().equals(orderid)).collect(Collectors.toList());
+		List<Order> orderdata = Main.getorders().stream().filter(orderdat -> orderdat.getorderid().equals(orderid)).collect(Collectors.toList());
+		List<Payment> paymentdata = Main.getpayment().stream().filter(paymentdat -> paymentdat.getorderid().equals(orderid)).collect(Collectors.toList());
+		List<Classitems> itemsdata = Main.getitems().stream().filter(itemdat -> itemdat.getorderid().equals(orderid)).collect(Collectors.toList());
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Receipt.class.getResource("/main/logo/logo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(TheReceipt.class.getResource("/main/logo/logo.png")));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 956, 795);
 		contentPane = new JPanel();
@@ -317,7 +317,7 @@ public class Receipt extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("Receipt for Order ID " + orderid);
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setIcon(new ImageIcon(Receipt.class.getResource("/main/logo/receiptframe.png")));
+		lblNewLabel.setIcon(new ImageIcon(TheReceipt.class.getResource("/main/logo/receiptframe.png")));
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
