@@ -78,10 +78,10 @@ public class Itemselector extends JFrame {
 		
 		try {
 			itemlistinput = new BufferedReader(new FileReader("items.txt"));
-			String bakeryitemline = null;
+			String cafetimeitemline = null;
 			itemlist.add("Select Item");
-			while ((bakeryitemline = itemlistinput.readLine()) != null) {
-				String[] listitemcomma = bakeryitemline.split(",");
+			while ((cafetimeitemline = itemlistinput.readLine()) != null) {
+				String[] listitemcomma = cafetimeitemline.split(",");
 				itemlist.add(listitemcomma[0] + " RM"+ listitemcomma[1]);
 				itemlistname.add(listitemcomma[0]);
 				priceperitem.add(Double.parseDouble(listitemcomma[1]));
